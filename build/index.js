@@ -1,16 +1,17 @@
 const webpack = require('webpack')
-const nodemon = require('nodemon')
-const path = require('path')
-const chalk = require('chalk')
 const ora = require('ora')
 const argv = require('yargs').argv
-const env = require('./env.js')
 const config = require('./webpack.config.js')
 
 const log = console.log
 const WATCH = argv.watch
 
 if (WATCH) {
+  const nodemon = require('nodemon')
+  const path = require('path')
+  const chalk = require('chalk')
+  const env = require('./env.js')
+  
   let runner
   const run = () => nodemon({
     execMap: { js: 'node' },
