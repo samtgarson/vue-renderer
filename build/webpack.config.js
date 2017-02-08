@@ -1,16 +1,15 @@
 const path = require('path')
-const webpack = require('webpack')
 const fs = require('fs')
+const webpack = require('webpack')
 
 const projectRoot = path.resolve()
 
 const nodeModules = {}
 fs.readdirSync('node_modules')
   .filter(x => ['.bin'].indexOf(x) === -1)
-  .forEach((mod) => {
+  .forEach(mod => {
     nodeModules[mod] = `commonjs ${mod}`
   })
-
 
 const config = {
   target: 'node',
@@ -24,7 +23,7 @@ const config = {
     path: projectRoot
   },
   recordsPath: path.join(projectRoot, 'build/_records'),
-  resolve: { modules: [path.resolve(projectRoot, 'node_modules')] },
+  resolve: { modules: [path.resolve(projectRoot, 'node_modules')]},
   externals: nodeModules,
   devtool: '#eval-source-map',
   module: {

@@ -12,7 +12,6 @@ const format = json(':method :url :status :response-time ms :error')
 const logger = pify(morgan(format))
 const renderer = createRenderer()
 
-
 const srv = micro(async (req, res) => {
   await logger(req, res)
   try {
