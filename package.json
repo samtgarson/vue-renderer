@@ -36,9 +36,11 @@
     "start": "node .",
     "dev": "node build --watch",
     "build": "node build",
-    "test": "ava && xo",
-    "test:spec": "ava",
-    "test:lint": "xo"
+    "test": "xo",
+    "test:spec": "ava"
+  },
+  "now": {
+    "type": "npm"
   },
   "xo": {
     "ignores": [
