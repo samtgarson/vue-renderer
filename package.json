@@ -7,6 +7,7 @@
   "dependencies": {
     "aws-sdk": "^2.9.0",
     "babel-preset-latest": "^6.16.0",
+    "fs-promise": "^2.0.0",
     "micro": "^6.1.0",
     "morgan": "^1.8.0",
     "morgan-json": "^1.1.0",
