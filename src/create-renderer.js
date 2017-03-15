@@ -10,7 +10,9 @@ export default () => new Promise(async resolve => {
     Key: process.env.AWS_KEY
   }).promise()
 
-  const bundleRenderer = createBundleRenderer(data.Body.toString())
+  let code = data.Body.toString()
+  if (process.env.AWS_KEY.endsWith('json')) code = JSON.parse(code)
+  const bundleRenderer = createBundleRenderer(code)
   const renderToString = pify(bundleRenderer.renderToString)
-  return resolve(async html => renderToString({ body: html }))
+  return resolve(async context => renderToString(context))
 })
