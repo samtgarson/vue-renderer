@@ -1,11 +1,11 @@
 # Vue Render
-> Render your Vue templatese
+> Render your Vue templates
 
 A basic microservice which pulls a bundle from S3 to render your Vue templates.
 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-## Usage
+## Usage
 
 - `yarn dev` Run a development server which watches your files and restarts and builds when requires
 - `yarn build` Build your code into a bundle
