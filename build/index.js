@@ -10,8 +10,14 @@ if (WATCH) {
   const nodemon = require('nodemon')
   const path = require('path')
   const chalk = require('chalk')
-  const env = require('./env.js')
-  
+  let env
+  try {
+    env = require('./env.js') // eslint-disable-line import/no-unresolved
+  } catch (err) {
+    console.error(err)
+    env = {}
+  }
+
   let runner
   const run = () => nodemon({
     execMap: { js: 'node --inspect' },
