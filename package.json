@@ -1,6 +1,6 @@
 {
   "name": "vue-renderer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small service for rendering out your Vue templates",
   "main": "index.js",
   "license": "MIT",
