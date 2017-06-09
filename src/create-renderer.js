@@ -5,8 +5,9 @@ import AWS from 'aws-sdk'
 
 const { AWS_BUCKET: Bucket, AWS_KEY: Key, BUNDLE_PATH: bundlePath } = process.env
 const s3Enabled = Bucket && Key
-if (!s3Enabled && !bundlePath) throw 'Provide either path to bundle or AWS config'
-if (s3Enabled) { const s3 = new AWS.S3() }
+let s3
+if (!s3Enabled && !bundlePath) throw new Error('Provide either path to bundle or AWS config')
+if (s3Enabled) s3 = new AWS.S3()
 
 export default () => new Promise(async resolve => {
   let bundle

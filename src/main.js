@@ -1,9 +1,9 @@
+import { parse as parseUrl } from 'url'
 import micro, { sendError } from 'micro'
 import parseBody from 'raw-body'
 import pify from 'pify'
 import morgan from 'morgan'
 import json from 'morgan-json'
-import { parse as parseUrl } from 'url'
 import createRenderer from './create-renderer'
 
 const PORT = process.env.PORT || 5000
